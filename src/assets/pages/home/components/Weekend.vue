@@ -2,7 +2,7 @@
   <div>
     <div class="title">周末去哪</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
         <div class="item-img-wrapper">
           <img class="item-img" :src="item.imgUrl" alt="">
         </div>
@@ -19,68 +19,8 @@
 <script>
   export default {
     name: "HomeWeekend",
-    data(){
-      return{
-        recommendList:[
-
-          {
-            id:'0001',
-            imgUrl:'../../../jing_dian.png',
-            title:'美国哈佛开发就不浪费快递费就好了',
-            desc:'临床技能法律床律层面'
-          },
-          {
-            id:'0002',
-            imgUrl:'../../../jing_dian.png',
-            title:'美国哈佛开发就不浪费快递费就好了',
-            desc:'临床技能法律床律层面'
-          },
-          {
-            id:'0003',
-            imgUrl:'../../../jing_dian.png',
-            title:'美国哈佛开发就不浪费快递费就好了',
-            desc:'临床技能法律床律层面'
-          },
-          {
-            id:'0004',
-            imgUrl:'../../../jing_dian.png',
-            title:'美国哈佛开发就不浪费快递费就好了',
-            desc:'临床技能法律床律层面'
-          },
-          {
-            id:'0005',
-            imgUrl:'../../../jing_dian.png',
-            title:'美国哈佛开发就不浪费快递费就好了',
-            desc:'临床技能法律床律层面'
-          },
-          {
-            id:'0006',
-            imgUrl:'../../../jing_dian.png',
-            title:'美国哈佛开发就不浪费快递费就好了',
-            desc:'临床技能法律床律层面'
-          },
-          {
-            id:'0007',
-            imgUrl:'../../../jing_dian.png',
-            title:'美国哈佛开发就不浪费快递费就好了',
-            desc:'临床技能法律床律层面'
-          },
-          {
-            id:'0008',
-            imgUrl:'../../../jing_dian.png',
-            title:'美国哈佛开发就不浪费快递费就好了',
-            desc:'临床技能法律床律层面'
-          },
-          {
-            id:'0009',
-            imgUrl:'../../../jing_dian.png',
-            title:'美国哈佛开发就不浪费快递费就好了',
-            desc:'临床技能法律床律层面'
-          }
-
-
-        ]
-      }
+    props:{
+      list:Array
     }
   }
 </script>
@@ -90,13 +30,13 @@
   @import "~styles/mixins.styl"
 
   .title
-    margin-top .2rem
+    /*margin-top .2rem*/
     line-height .8rem
     background #eee
     text-indent .2rem
   .item-img-wrapper
     overflow hidden
-    padding-bottom 33.9%
+    padding-bottom 37.09%
     height 0
   .item-img
     width 100%

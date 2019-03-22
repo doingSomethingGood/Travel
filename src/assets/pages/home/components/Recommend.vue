@@ -2,8 +2,8 @@
   <div>
     <div class="title">热销推荐</div>
     <ul>
-      <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
-          <img class="item-img" :src="item.imgUrl" alt="">
+      <li class="item border-bottom" v-for="item of list" :key="item.id">
+        <img class="item-img" :src="item.imgUrl" alt="">
         <div class="item-info">
           <p class="item-title">{{item.title}}</p>
           <p class="item-desc">{{item.desc}}</p>
@@ -18,69 +18,10 @@
 <script>
   export default {
     name: "HomeRecommend",
-    data(){
-      return{
-        recommendList:[
-
-          {
-            id:'0001',
-            imgUrl:'../../../jing_dian.png',
-            title:'美国哈佛开发就不浪费快递费就好了',
-            desc:'临床技能法律床律层面'
-          },
-          {
-            id:'0002',
-            imgUrl:'../../../jing_dian.png',
-            title:'美国哈佛开发就不浪费快递费就好了',
-            desc:'临床技能法律床律层面'
-          },
-          {
-            id:'0003',
-            imgUrl:'../../../jing_dian.png',
-            title:'美国哈佛开发就不浪费快递费就好了',
-            desc:'临床技能法律床律层面'
-          },
-          {
-            id:'0004',
-            imgUrl:'../../../jing_dian.png',
-            title:'美国哈佛开发就不浪费快递费就好了',
-            desc:'临床技能法律床律层面'
-          },
-          {
-            id:'0005',
-            imgUrl:'../../../jing_dian.png',
-            title:'美国哈佛开发就不浪费快递费就好了',
-            desc:'临床技能法律床律层面'
-          },
-          {
-            id:'0006',
-            imgUrl:'../../../jing_dian.png',
-            title:'美国哈佛开发就不浪费快递费就好了',
-            desc:'临床技能法律床律层面'
-          },
-          {
-            id:'0007',
-            imgUrl:'../../../jing_dian.png',
-            title:'美国哈佛开发就不浪费快递费就好了',
-            desc:'临床技能法律床律层面'
-          },
-          {
-            id:'0008',
-            imgUrl:'../../../jing_dian.png',
-            title:'美国哈佛开发就不浪费快递费就好了',
-            desc:'临床技能法律床律层面'
-          },
-          {
-            id:'0009',
-            imgUrl:'../../../jing_dian.png',
-            title:'美国哈佛开发就不浪费快递费就好了',
-            desc:'临床技能法律床律层面'
-          }
-
-
-        ]
-      }
+    props:{
+      list:Array
     }
+
   }
 </script>
 
@@ -93,6 +34,7 @@
     line-height .8rem
     background #eee
     text-indent .2rem
+
   .item
     overflow hidden
     display flex

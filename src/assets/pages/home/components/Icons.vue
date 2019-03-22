@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page,index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
@@ -17,57 +17,20 @@
 <script>
   export default {
     name: "icons",
-    data() {
+    props:{
+      list:Array
+    },
+    data(){
       return {
-        iconList: [
-          {
-            id: '0001',
-            imgUrl: '../../../jing_dian.png',
-            desc: '景点门票'
-          },
-          {
-            id: '0002',
-            imgUrl: '../../../jing_dian_1.png',
-            desc: '动物园'
-          },
-          {
-            id: '0003',
-            imgUrl: '../../../jing_dian_2.png',
-            desc: '植物园'
-          },
-          {
-            id: '0004',
-            imgUrl: '../../../jing_dian_3.png',
-            desc: '啊哈哈乐园'
-          },
-          {
-            id: '0005',
-            imgUrl: '../../../jing_dian_4.png',
-            desc: '景点门票'
-          },
-          {
-            id: '0007',
-            imgUrl: '../../../jing_dian_6.png',
-            desc: '景点门票'
-          },
-          {
-            id: '0008',
-            imgUrl: '../../../jing_dian_7.png',
-            desc: '景点门票'
-          },
-          {
-            id: '0009',
-            imgUrl: '../../../jing_dian_8.png',
-            desc: '景点门票'
-          },
-
-        ]
+        swiperOption:{
+          autoplay:false
+        }
       }
     },
     computed: {
       pages() {
         const pages = [];
-        this.iconList.forEach((item, index) => {
+        this.list.forEach((item, index) => {
           const page = Math.floor(index / 8);
           if (!pages[page]) {
             pages[page] = [];
